@@ -50,13 +50,13 @@ export default function CourseCard({ course, imagePosition, className = '', onEn
         </p>
 
         {/* Buttons Container */}
-        <div className="flex flex-col gap-0 lg:gap-[27px] w-full mt-[5px] lg:mt-0">
+        <div className="flex flex-col gap-[12px] lg:gap-[27px] w-full mt-[5px] lg:mt-0">
           {/* Learn More Expandable Button */}
           <div className="flex flex-col w-full">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className={`
-                w-full h-[39px] lg:h-[59px]
+                w-full h-[50px] lg:h-[60px]
                 bg-[var(--color-light-blue)] text-black
                 text-[16px] lg:text-[22px] font-bold uppercase
                 tracking-[0.8px] lg:tracking-[1.1px]
@@ -64,7 +64,7 @@ export default function CourseCard({ course, imagePosition, className = '', onEn
                 transition-all duration-200
                 hover:bg-[#5fb5d1]
                 focus:outline-none focus:ring-4 focus:ring-[var(--color-light-blue)]/50
-                ${isExpanded ? 'rounded-t-[20px] lg:rounded-t-[40px] rounded-b-none' : 'rounded-[20px] lg:rounded-[40px]'}
+                ${isExpanded ? 'rounded-t-[50px] rounded-b-none' : 'rounded-[50px]'}
               `}
               aria-expanded={isExpanded}
               aria-controls={`curriculum-${course.id}`}
@@ -90,9 +90,9 @@ export default function CourseCard({ course, imagePosition, className = '', onEn
             {isExpanded && (
               <div
                 id={`curriculum-${course.id}`}
-                className="bg-white border-2 border-[var(--color-light-blue)] border-t-0 rounded-b-[20px] lg:rounded-b-[40px] px-[20px] lg:px-[40px] py-[20px] lg:py-[30px] w-full"
+                className="bg-white border-2 border-[var(--color-light-blue)] border-t-0 rounded-b-[50px] px-[20px] lg:px-[40px] py-[20px] lg:py-[30px] w-full"
               >
-                <p className="text-[16px] lg:text-[24px] text-black whitespace-pre-line leading-[150%]">
+                <p className="text-[16px] lg:text-[19px] text-black whitespace-pre-line leading-[100%]">
                   {course.curriculum}
                 </p>
               </div>
