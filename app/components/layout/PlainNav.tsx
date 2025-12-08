@@ -33,14 +33,18 @@ export default function PlainNav() {
         <div className="container mx-auto">
           <div className="max-w-[1555px] mx-auto px-[23px] lg:px-0">
             {/* Mobile: Hamburger + Logo */}
-            <div className="lg:hidden flex items-center w-full">
-              <HamburgerIcon
-                isOpen={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-              <div className="flex-1 flex justify-center">
-                <Logo size="medium" />
+            <div className="lg:hidden flex flex-col items-center w-full">
+              <div className="flex items-center w-full">
+                <HamburgerIcon
+                  isOpen={isMobileMenuOpen}
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                />
+                <div className="flex-1 flex justify-center">
+                  <Logo size="medium" />
+                </div>
               </div>
+              {/* Decorative line under logo */}
+              {/* <div className="w-[351px] h-[2px] bg-white/20 mt-4" /> */}
             </div>
 
             {/* Desktop: Logo + Nav Links */}

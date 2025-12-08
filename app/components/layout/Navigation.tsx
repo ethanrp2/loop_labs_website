@@ -28,14 +28,18 @@ export default function Navigation() {
         <div className="container mx-auto">
           <div className="flex items-center justify-between max-w-[1555px] mx-auto">
             {/* Mobile: Hamburger + Logo */}
-            <div className="lg:hidden flex items-center w-full px-4">
-              <HamburgerIcon
-                isOpen={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-              <div className="flex-1 flex justify-center">
-                <Logo size="medium" />
+            <div className="lg:hidden flex flex-col items-center w-full px-4">
+              <div className="flex items-center w-full">
+                <HamburgerIcon
+                  isOpen={isMobileMenuOpen}
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                />
+                <div className="flex-1 flex justify-center">
+                  <Logo size="medium" />
+                </div>
               </div>
+              {/* Decorative line under logo */}
+              <div className="w-[351px] h-[2px] bg-white/20 mt-4" />
             </div>
 
             {/* Desktop: Logo + Nav Links */}
