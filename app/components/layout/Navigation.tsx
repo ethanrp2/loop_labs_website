@@ -40,14 +40,14 @@ export default function Navigation() {
           <div className="flex items-center justify-between max-w-[1555px] mx-auto">
             {/* Mobile: Hamburger + Logo */}
             <div className="lg:hidden flex flex-col items-center w-full px-4">
-              <div className="flex items-center w-full">
-                <HamburgerIcon
-                  isOpen={isMobileMenuOpen}
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                />
-                <div className="flex-1 flex justify-center">
-                  <Logo size="medium" />
+              <div className="relative flex items-center justify-center w-full">
+                <div className="absolute left-0">
+                  <HamburgerIcon
+                    isOpen={isMobileMenuOpen}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  />
                 </div>
+                <Logo size="medium" />
               </div>
               {/* Decorative line under logo */}
               <div className="w-[351px] h-[2px] bg-white/20 mt-4" />
