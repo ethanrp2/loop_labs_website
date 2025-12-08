@@ -1,11 +1,15 @@
 import Button from '../ui/Button';
 
+interface CTASectionProps {
+  onEnrollClick?: () => void;
+}
+
 /**
  * CTA section component
  * Desktop: "Start Your AI Education Today"
  * Mobile: "Start your AI Education!"
  */
-export default function CTASection() {
+export default function CTASection({ onEnrollClick }: CTASectionProps) {
   return (
     <section id="enroll" className="bg-[var(--color-light-blue)] pt-16 lg:pt-24 pb-8 lg:pb-12 -mt-[20px] lg:-mt-[30px]">
       <div className="container mx-auto px-6">
@@ -24,10 +28,14 @@ export default function CTASection() {
             Join 500+ users on their AI education journey
           </p>
 
-          {/* CTA Button */}
-          <Button variant="outline">
-            <span className="lg:hidden">Enroll Now</span>
-            <span className="hidden lg:inline">Discover our Course</span>
+          {/* CTA Buttons - Different actions for mobile vs desktop */}
+          {/* Mobile: Enroll Now opens modal */}
+          <Button variant="outline" onClick={onEnrollClick} className="lg:hidden">
+            Enroll Now
+          </Button>
+          {/* Desktop: Discover our Course navigates to coursework page */}
+          <Button variant="outline" href="/coursework" className="hidden lg:inline-flex">
+            Discover our Course
           </Button>
         </div>
       </div>

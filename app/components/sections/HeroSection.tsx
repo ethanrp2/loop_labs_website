@@ -1,12 +1,16 @@
 import Button from '../ui/Button';
 
+interface HeroSectionProps {
+  onEnrollClick?: () => void;
+}
+
 /**
  * Hero section component
  * Background is handled by Navigation's curved image
  * This section contains the title and CTA buttons
  * Matches CourseHeroSection sizing for layout
  */
-export default function HeroSection() {
+export default function HeroSection({ onEnrollClick }: HeroSectionProps) {
   return (
     <section className="relative z-10 min-h-[450px] lg:min-h-[650px] flex items-end justify-center pb-[40px] lg:pb-[60px]">
       {/* Content */}
@@ -25,10 +29,10 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-10 w-full lg:w-auto">
-          <Button variant="primary" fullWidth={false}>
+          <Button variant="primary" fullWidth={false} href="/coursework">
             Discover our Course
           </Button>
-          <Button variant="secondary" fullWidth={false}>
+          <Button variant="secondary" fullWidth={false} onClick={onEnrollClick}>
             Enroll Now
           </Button>
         </div>

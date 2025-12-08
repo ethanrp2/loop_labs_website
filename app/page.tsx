@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Navigation from './components/layout/Navigation';
 import SecondaryNav from './components/layout/SecondaryNav';
 import Footer from './components/layout/Footer';
@@ -7,15 +10,21 @@ import MissionSection from './components/sections/MissionSection';
 import WhyItMattersSection from './components/sections/WhyItMattersSection';
 import CTASection from './components/sections/CTASection';
 import ReviewsSection from './components/sections/ReviewsSection';
+import EnrollmentModal from './components/ui/EnrollmentModal';
 
 export default function Home() {
+  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
+
+  const openEnrollModal = () => setIsEnrollModalOpen(true);
+  const closeEnrollModal = () => setIsEnrollModalOpen(false);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navigation />
 
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection onEnrollClick={openEnrollModal} />
 
       {/* Secondary Navigation */}
       <SecondaryNav />
@@ -30,13 +39,16 @@ export default function Home() {
       <WhyItMattersSection />
 
       {/* CTA Section */}
-      <CTASection />
+      <CTASection onEnrollClick={openEnrollModal} />
 
       {/* Reviews Section */}
       <ReviewsSection />
 
       {/* Footer */}
       <Footer />
+
+      {/* Enrollment Modal */}
+      <EnrollmentModal isOpen={isEnrollModalOpen} onClose={closeEnrollModal} />
     </div>
   );
 }

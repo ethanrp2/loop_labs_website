@@ -1,4 +1,4 @@
-'use client';
+// x'use client';
 
 import { useEffect, useRef } from 'react';
 import { EnrollmentModalProps } from '@/app/types/components';
@@ -97,14 +97,14 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
         role="dialog"
         aria-modal="true"
         aria-labelledby="enrollment-modal-title"
-        className="fixed inset-0 z-50 flex items-end lg:items-center justify-center"
+        className="fixed inset-0 z-50 flex items-end lg:items-center justify-center p-0 lg:p-4"
       >
         <div
           className="
-            bg-white w-full max-h-[90vh] overflow-y-auto relative
-            rounded-t-[20px] lg:rounded-[30px]
-            lg:max-w-[1133px] lg:mx-4
-            px-6 py-8 lg:px-20 lg:py-12
+            bg-white w-full relative
+            rounded-t-[20px] lg:rounded-[20px]
+            lg:max-w-[900px]
+            px-6 py-5 lg:px-12 lg:py-6
           "
         >
           {/* Close Button */}
@@ -113,8 +113,8 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
             onClick={onClose}
             aria-label="Close enrollment form"
             className="
-              absolute top-4 right-4 lg:top-8 lg:right-8
-              text-[25px] lg:text-[50px] font-black
+              absolute top-3 right-4 lg:top-5 lg:right-6
+              text-[22px] lg:text-[36px] font-black
               text-black hover:opacity-70
               focus:outline-none focus:ring-2 focus:ring-[var(--color-dark-blue)] rounded
               transition-opacity
@@ -127,9 +127,9 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
           <h2
             id="enrollment-modal-title"
             className="
-              text-[30px] lg:text-[64px] font-bold
+              text-[22px] lg:text-[36px] font-bold
               text-[var(--color-dark-blue)]
-              mb-6 lg:mb-10
+              mb-3 lg:mb-4
               pr-10
             "
           >
@@ -137,7 +137,7 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
           </h2>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2.5 lg:gap-3">
             {/* Parent/Guardian Name */}
             <div className="relative">
               <label htmlFor="parentName" className="sr-only">
@@ -152,12 +152,11 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
                 required
                 aria-required="true"
                 className="
-                  w-full h-[51px] lg:h-[70px]
+                  w-full h-[42px] lg:h-[48px]
                   border border-[#76c8e5] lg:border-2
-                  rounded-[15px] lg:rounded-[30px]
-                  lg:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
-                  px-4 lg:px-6
-                  text-[16px] lg:text-[30px] text-black
+                  rounded-[12px] lg:rounded-[18px]
+                  px-4 lg:px-5
+                  text-[14px] lg:text-[16px] text-black
                   placeholder:text-black
                   focus:outline-none focus:ring-2 focus:ring-[var(--color-light-blue)]
                 "
@@ -177,12 +176,11 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
                 required
                 aria-required="true"
                 className="
-                  w-full h-[51px] lg:h-[70px]
+                  w-full h-[42px] lg:h-[48px]
                   border border-[#76c8e5] lg:border-2
-                  rounded-[15px] lg:rounded-[30px]
-                  lg:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
-                  px-4 lg:px-6
-                  text-[16px] lg:text-[30px] text-black
+                  rounded-[12px] lg:rounded-[18px]
+                  px-4 lg:px-5
+                  text-[14px] lg:text-[16px] text-black
                   placeholder:text-black
                   focus:outline-none focus:ring-2 focus:ring-[var(--color-light-blue)]
                 "
@@ -202,12 +200,11 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
                 required
                 aria-required="true"
                 className="
-                  w-full h-[51px] lg:h-[70px]
+                  w-full h-[42px] lg:h-[48px]
                   border border-[#76c8e5] lg:border-2
-                  rounded-[15px] lg:rounded-[30px]
-                  lg:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
-                  px-4 lg:px-6
-                  text-[16px] lg:text-[30px] text-black
+                  rounded-[12px] lg:rounded-[18px]
+                  px-4 lg:px-5
+                  text-[14px] lg:text-[16px] text-black
                   placeholder:text-black
                   focus:outline-none focus:ring-2 focus:ring-[var(--color-light-blue)]
                 "
@@ -227,12 +224,11 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
                 required
                 aria-required="true"
                 className="
-                  w-full h-[51px] lg:h-[70px]
+                  w-full h-[42px] lg:h-[48px]
                   border border-[#76c8e5] lg:border-2
-                  rounded-[15px] lg:rounded-[30px]
-                  lg:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
-                  px-4 lg:px-6
-                  text-[16px] lg:text-[30px] text-black
+                  rounded-[12px] lg:rounded-[18px]
+                  px-4 lg:px-5
+                  text-[14px] lg:text-[16px] text-black
                   placeholder:text-black
                   focus:outline-none focus:ring-2 focus:ring-[var(--color-light-blue)]
                 "
@@ -244,24 +240,35 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
               <label htmlFor="studentLevel" className="sr-only">
                 Student Level (required)
               </label>
-              <input
-                type="text"
+              <select
                 id="studentLevel"
                 name="studentLevel"
-                placeholder="Student Level *"
                 required
                 aria-required="true"
+                defaultValue=""
                 className="
-                  w-full h-[51px] lg:h-[70px]
+                  w-full h-[42px] lg:h-[48px]
                   border border-[#76c8e5] lg:border-2
-                  rounded-[15px] lg:rounded-[30px]
-                  shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
-                  px-4 lg:px-6
-                  text-[16px] lg:text-[30px] text-black
-                  placeholder:text-black
+                  rounded-[12px] lg:rounded-[18px]
+                  px-4 lg:px-5
+                  text-[14px] lg:text-[16px] text-black
                   focus:outline-none focus:ring-2 focus:ring-[var(--color-light-blue)]
+                  bg-white appearance-none cursor-pointer
                 "
-              />
+              >
+                <option value="" disabled>Student Level *</option>
+                <option value="sprouts">Loop Lab Sprouts (Grades K-2)</option>
+                <option value="junior">LoopLabs Junior (Grades 3-5)</option>
+                <option value="explorers">LoopLabs Explorers (Grades 6-8)</option>
+                <option value="innovators">LoopLabs Innovators (Grades 9-12)</option>
+                <option value="launch">LoopLabs Launch (College+)</option>
+              </select>
+              {/* Dropdown arrow */}
+              <div className="absolute right-4 lg:right-5 top-1/2 -translate-y-1/2 pointer-events-none">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1.5L6 6.5L11 1.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
             </div>
 
             {/* Message */}
@@ -273,14 +280,13 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
                 id="message"
                 name="message"
                 placeholder="Message"
-                rows={4}
+                rows={3}
                 className="
-                  w-full min-h-[132px] lg:min-h-[180px]
+                  w-full min-h-[80px] lg:min-h-[100px]
                   border border-[#76c8e5] lg:border-2
-                  rounded-[15px] lg:rounded-[30px]
-                  shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
-                  px-4 lg:px-6 py-4
-                  text-[16px] lg:text-[30px] text-black
+                  rounded-[12px] lg:rounded-[18px]
+                  px-4 lg:px-5 py-2.5
+                  text-[14px] lg:text-[16px] text-black
                   placeholder:text-black
                   focus:outline-none focus:ring-2 focus:ring-[var(--color-light-blue)]
                   resize-none
@@ -289,21 +295,21 @@ export default function EnrollmentModal({ isOpen, onClose }: EnrollmentModalProp
             </div>
 
             {/* Required Fields Note - Desktop only */}
-            <p className="hidden lg:block text-[24px] text-black tracking-[1.2px] mt-2">
+            <p className="hidden lg:block text-[14px] text-black tracking-[0.6px]">
               *Marks a Required Field
             </p>
 
             {/* Submit Button */}
-            <div className="flex justify-center mt-4 lg:mt-6">
+            <div className="flex justify-center mt-2 lg:mt-3">
               <button
                 type="submit"
                 className="
-                  w-full lg:w-[438px]
-                  h-[55px] lg:h-[65px]
+                  w-full lg:w-[280px]
+                  h-[44px] lg:h-[48px]
                   bg-[var(--color-light-blue)]
                   rounded-full
-                  text-[16px] lg:text-[22px] font-bold text-black uppercase
-                  tracking-[0.8px] lg:tracking-[1.1px]
+                  text-[14px] lg:text-[16px] font-bold text-black uppercase
+                  tracking-[0.8px] lg:tracking-[1px]
                   hover:bg-[#5fb5d1]
                   focus:outline-none focus:ring-4 focus:ring-[var(--color-light-blue)]/50
                   transition-colors
