@@ -1,0 +1,10 @@
+<svg width="1729" height="1031" viewBox="0 0 1729 1031" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="unionGradient" x1="864.5" y1="0" x2="864.5" y2="1031" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#191B58"/>
+<stop offset="0.5" stop-color="#4A1383"/>
+<stop offset="1" stop-color="#76C8E5"/>
+</linearGradient>
+</defs>
+<path d="M0 0 C432 200, 864 300, 1296 200 S 1729 100, 1729 0 V 1031 H 0 Z" fill="url(#unionGradient)"/>
+</svg>

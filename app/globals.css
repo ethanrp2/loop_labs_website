@@ -1,26 +1,296 @@
 @import "tailwindcss";
 
+/* ============================================
+   COLOR PALETTE
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-dark-blue: #191B58;
+  --color-light-blue: #76C8E5;
+  --color-purple: #4A1383;
+
+  /* Neutral Colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray: #D9D9D9;
 }
 
+/* ============================================
+   TAILWIND THEME CONFIGURATION
+   ============================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* === COLORS === */
+  --color-primary: var(--color-dark-blue);
+  --color-secondary: var(--color-light-blue);
+  --color-accent: var(--color-purple);
+  --color-text-primary: var(--color-black);
+  --color-text-inverse: var(--color-white);
+  --color-background: var(--color-white);
+
+  /* === TYPOGRAPHY === */
+  --font-inter: var(--font-inter);
+
+  /* Desktop Font Sizes */
+  --font-size-h1-desktop: 80px;
+  --font-size-h2-desktop: 50px;
+  --font-size-h3-desktop: 30px;
+  --font-size-body-desktop: 30px;
+  --font-size-medium-desktop: 25px;
+  --font-size-button-desktop: 22px;
+  --font-size-small-desktop: 20px;
+  --font-size-subtitle-desktop: 32px;
+  --font-size-large-desktop: 40px;
+
+  /* Mobile Font Sizes */
+  --font-size-h1-mobile: 30px;
+  --font-size-h2-mobile: 24px;
+  --font-size-h3-mobile: 20px;
+  --font-size-body-mobile: 16px;
+  --font-size-button-mobile: 16px;
+  --font-size-small-mobile: 14px;
+  --font-size-subtitle-mobile: 18px;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Letter Spacing */
+  --letter-spacing-button-desktop: 1.1px; /* 5% of 22px */
+  --letter-spacing-button-mobile: 0.8px; /* 5% of 16px */
+  --letter-spacing-normal: 0;
+
+  /* Line Heights */
+  --line-height-normal: 100%;
+
+  /* === SPACING & LAYOUT === */
+
+  /* Border Radius */
+  --radius-sm-mobile: 20px;
+  --radius-sm-desktop: 30px;
+  --radius-md-desktop: 40px;
+  --radius-lg: 50px;
+
+  /* Container Widths */
+  --container-max-desktop: 1728px;
+  --container-max-mobile: 393px;
+  --content-max-desktop: 1555px;
+
+  /* Section Padding - Desktop */
+  --section-padding-x-desktop: 120px;
+  --section-padding-x-tablet: 60px;
+  --section-padding-x-mobile: 20px;
+  --section-padding-y: 10px;
+
+  /* Spacing Scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 10px;
+  --spacing-lg: 16px;
+  --spacing-xl: 22px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 33px;
+  --spacing-4xl: 46px;
+  --spacing-5xl: 103px;
+
+  /* === BREAKPOINTS === */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1728px;
+
+  /* ============================================
+     EVENTS PAGE SPECIFIC TOKENS
+     ============================================ */
+
+  /* Event Card Dimensions - Desktop */
+  --event-card-width-desktop: 1487px;
+  --event-card-height-desktop: 529px;
+  --event-card-image-width-desktop: 305px;
+  --event-card-image-height-desktop: 418px;
+  --event-card-gap-desktop: 80px;
+  --event-card-border-radius-desktop: 40px;
+  --event-card-image-radius-desktop: 20px;
+
+  /* Event Card Dimensions - Mobile */
+  --event-card-width-mobile: 353px;
+  --event-card-height-mobile: 212px;
+  --event-card-image-width-mobile: 141px;
+  --event-card-image-height-mobile: 172px;
+  --event-card-gap-mobile: 20px;
+  --event-card-border-radius-mobile: 20px;
+  --event-card-image-radius-mobile: 10px;
+
+  /* Event Poster Dimensions - Desktop */
+  --event-poster-width-desktop: 567px;
+  --event-poster-height-desktop: 779px;
+  --event-poster-border-radius-desktop: 40px;
+
+  /* Event Poster Dimensions - Mobile */
+  --event-poster-width-mobile: 354px;
+  --event-poster-height-mobile: 487px;
+  --event-poster-border-radius-mobile: 20px;
+
+  /* Tab Button Dimensions - Desktop */
+  --tab-button-width-desktop: 489px;
+  --tab-button-height-desktop: 91px;
+  --tab-button-gap-desktop: 40px;
+  --tab-button-font-desktop: 22px;
+  --tab-button-tracking-desktop: 1.1px;
+
+  /* Tab Button Dimensions - Mobile */
+  --tab-button-width-mobile: 167px;
+  --tab-button-height-mobile: 48px;
+  --tab-button-gap-mobile: 10px;
+  --tab-button-font-mobile: 12px;
+  --tab-button-tracking-mobile: 0.6px;
+
+  /* Icon Sizes */
+  --icon-map-size-desktop: 85px;
+  --icon-map-size-mobile: 35px;
+  --icon-hamburger-width: 31px;
+  --icon-hamburger-height: 20px;
+
+  /* Events Typography - Desktop */
+  --hero-heading-desktop: 80px;
+  --hero-event-name-desktop: 50px;
+  --hero-location-desktop: 30px;
+  --card-name-desktop: 50px;
+  --card-date-desktop: 30px;
+
+  /* Events Typography - Mobile */
+  --hero-heading-mobile: 30px;
+  --hero-event-name-mobile: 18px;
+  --hero-location-mobile: 16px;
+  --card-name-mobile: 20px;
+  --card-date-mobile: 18px;
+
+  /* Event List Spacing */
+  --event-card-spacing-desktop: 588px;
+  --event-card-spacing-mobile: 236px;
+  --event-list-gap-desktop: 72px;
+  --event-list-gap-mobile: 24px;
+
+  /* Container Padding */
+  --container-padding-desktop: 120px;
+  --container-padding-mobile: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+/* Mobile First - Default (up to 768px) */
+:root {
+  --font-size-h1: var(--font-size-h1-mobile);
+  --font-size-h2: var(--font-size-h2-mobile);
+  --font-size-h3: var(--font-size-h3-mobile);
+  --font-size-body: var(--font-size-body-mobile);
+  --font-size-button: var(--font-size-button-mobile);
+  --font-size-small: var(--font-size-small-mobile);
+  --font-size-subtitle: var(--font-size-subtitle-mobile);
+  --letter-spacing-button: var(--letter-spacing-button-mobile);
+  --section-padding-x: var(--section-padding-x-mobile);
+  --radius-sm: var(--radius-sm-mobile);
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-size-h1: 60px;
+    --font-size-h2: 40px;
+    --font-size-h3: 28px;
+    --font-size-body: 24px;
+    --font-size-button: 20px;
+    --font-size-small: 18px;
+    --section-padding-x: var(--section-padding-x-tablet);
   }
 }
 
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  :root {
+    --font-size-h1: var(--font-size-h1-desktop);
+    --font-size-h2: var(--font-size-h2-desktop);
+    --font-size-h3: var(--font-size-h3-desktop);
+    --font-size-body: var(--font-size-body-desktop);
+    --font-size-button: var(--font-size-button-desktop);
+    --font-size-small: var(--font-size-small-desktop);
+    --font-size-subtitle: var(--font-size-subtitle-desktop);
+    --letter-spacing-button: var(--letter-spacing-button-desktop);
+    --section-padding-x: var(--section-padding-x-desktop);
+    --radius-sm: var(--radius-sm-desktop);
+  }
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.container {
+  max-width: var(--container-max-desktop);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.section-spacing {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+/* Typography Utilities */
+.text-h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.text-h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.text-h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+}
+
+.text-body {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+}
+
+.text-button {
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-button);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   DARK MODE (Optional - not in current design)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keep light theme for now - design doesn't specify dark mode */
+  }
 }
