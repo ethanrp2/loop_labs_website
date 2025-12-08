@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import Logo from '../shared/Logo';
 import HamburgerIcon from '../shared/HamburgerIcon';
 import MobileMenu from './MobileMenu';
@@ -26,14 +27,38 @@ export default function PlainNav() {
 
   return (
     <>
+      {/* Background SVG - Full width, fits to screen bounds */}
+      <div className="absolute top-0 left-0 right-0 z-0">
+        {/* Mobile background */}
+        <Image
+          src="/images/backgrounds/plain_nav_mobile.svg"
+          alt=""
+          width={1920}
+          height={200}
+          className="w-full h-auto lg:hidden"
+          priority
+          unoptimized
+        />
+        {/* Desktop background */}
+        <Image
+          src="/images/backgrounds/plain-nav.svg"
+          alt=""
+          width={1920}
+          height={200}
+          className="w-full h-auto hidden lg:block"
+          priority
+          unoptimized
+        />
+      </div>
+
       <nav
-        className="relative w-full py-[39px] lg:py-8 bg-cover bg-center bg-no-repeat bg-[url('/images/backgrounds/plain_nav_mobile.svg')] lg:bg-[url('/images/backgrounds/plain-nav.svg')]"
+        className="relative z-10 w-full py-4 lg:py-6"
         aria-label="Plain navigation"
       >
         <div className="container mx-auto">
-          <div className="max-w-[1555px] mx-auto px-[23px] lg:px-0">
+          <div className="flex items-center justify-between max-w-[1555px] mx-auto">
             {/* Mobile: Hamburger + Logo */}
-            <div className="lg:hidden flex flex-col items-center w-full">
+            <div className="lg:hidden flex flex-col items-center w-full px-4">
               <div className="flex items-center w-full">
                 <HamburgerIcon
                   isOpen={isMobileMenuOpen}
@@ -44,7 +69,7 @@ export default function PlainNav() {
                 </div>
               </div>
               {/* Decorative line under logo */}
-              {/* <div className="w-[351px] h-[2px] bg-white/20 mt-4" /> */}
+              <div className="w-[351px] h-[2px] bg-white/20 mt-4" />
             </div>
 
             {/* Desktop: Logo + Nav Links */}

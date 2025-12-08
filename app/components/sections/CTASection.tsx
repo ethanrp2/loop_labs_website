@@ -7,7 +7,7 @@ import Button from '../ui/Button';
  */
 export default function CTASection() {
   return (
-    <section id="enroll" className="bg-[var(--color-light-blue)] py-16 lg:py-24">
+    <section id="enroll" className="bg-[var(--color-light-blue)] pt-16 lg:pt-24 pb-8 lg:pb-12 -mt-[20px] lg:-mt-[30px]">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-6 lg:gap-12 max-w-[1024px] mx-auto">
           {/* Heading */}
@@ -17,11 +17,11 @@ export default function CTASection() {
           </h2>
 
           {/* Decorative Line */}
-          <div className="w-full max-w-[1482px] h-[2px] lg:h-[4px] bg-[var(--color-dark-blue)]/20" />
+          <div className="w-full max-w-[1482px] h-[2px] lg:h-[4px] bg-black/20" />
 
           {/* Subtitle */}
           <p className="text-subtitle lg:text-[32px] text-black text-center">
-            Join &quot;XX+&quot; users on their AI education journey
+            Join 500+ users on their AI education journey
           </p>
 
           {/* CTA Button */}

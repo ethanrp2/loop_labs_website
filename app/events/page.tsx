@@ -28,7 +28,7 @@ export default function EventsPage() {
       {featuredEvent && <EventHero event={featuredEvent} />}
 
       {/* Event List Section with Light Blue Background */}
-      <section className="relative bg-[var(--color-light-blue)] py-[26px] lg:py-[72px] min-h-[567px]">
+      <section className="relative bg-[var(--color-light-blue)] py-[26px] lg:py-[72px] min-h-[567px] rounded-b-[20px] lg:rounded-b-[30px] shadow-lg">
         <div className="mb-[24px] lg:mb-[72px]">
           <EventTabs activeTab={activeTab} onTabChange={setActiveTab} />
         </div>

@@ -9,23 +9,23 @@ import { icons } from '@/app/constants/images';
 export default function ReviewsSection() {
   const reviews = [
     {
-      name: 'John Doe',
+      name: 'Sarah Mitchell',
       profileImage: icons.profilePlaceholder,
       rating: 5,
-      date: 'Dec 2025',
-      review: 'Lorem ipsum dolor sit amet. Non totam amet in sunt expedita aut molestias deserunt eum deleniti deserunt',
+      date: 'Nov 2025',
+      review: 'LoopLabs transformed my understanding of AI. The hands-on projects and expert instructors made complex concepts accessible and engaging',
     },
     {
-      name: 'John Doe',
+      name: 'Marcus Chen',
       profileImage: icons.profilePlaceholder,
       rating: 5,
-      date: 'Dec 2025',
-      review: 'Lorem ipsum dolor sit amet. Et rerum accusantium',
+      date: 'Oct 2025',
+      review: 'As a high school student, I found the curriculum perfectly paced. Now I can build my own AI projects with confidence',
     },
   ];
 
   return (
-    <section id="reviews" className="bg-[var(--color-light-blue)] py-8 lg:py-16">
+    <section id="reviews" className="relative z-10 bg-[var(--color-light-blue)] py-8 lg:py-16 rounded-b-[20px] lg:rounded-b-[30px] shadow-lg">
       <div className="container mx-auto px-6">
         <div className="bg-white rounded-t-[20px] lg:rounded-t-[30px] py-8 lg:py-16 px-6 lg:px-12">
           {/* Heading */}

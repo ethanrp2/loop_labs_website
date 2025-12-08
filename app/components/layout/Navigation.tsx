@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import Logo from '../shared/Logo';
 import HamburgerIcon from '../shared/HamburgerIcon';
 import MobileMenu from './MobileMenu';
 
 /**
- * Main navigation component
- * Desktop: Logo left, horizontal links right
- * Mobile: Logo left, hamburger icon right
+ * Main navigation with SVG background
  */
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,7 +23,19 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="absolute top-0 left-0 right-0 z-50 py-8" aria-label="Main navigation">
+      {/* Background SVG - Full width/height container */}
+      <div className="absolute top-0 left-0 right-0 h-[450px] lg:h-[650px] overflow-hidden z-0">
+        <Image
+          src="/images/backgrounds/cover-background.svg"
+          alt=""
+          fill
+          className="object-cover object-bottom"
+          priority
+          unoptimized
+        />
+      </div>
+
+      <nav className="absolute top-0 left-0 right-0 z-50 py-4 lg:py-6" aria-label="Main navigation">
         <div className="container mx-auto">
           <div className="flex items-center justify-between max-w-[1555px] mx-auto">
             {/* Mobile: Hamburger + Logo */}

@@ -7,6 +7,8 @@ export interface ButtonProps {
   onClick?: () => void;
   className?: string;
   fullWidth?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
 }
 
 export interface ContactLinkProps {
@@ -31,4 +33,9 @@ export interface ReviewCardProps {
 
 export interface StarRatingProps {
   rating: number;
+}
+
+export interface EnrollmentModalProps {
+  isOpen: boolean;
+  onClose: () => void;
 }

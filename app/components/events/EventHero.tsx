@@ -25,7 +25,7 @@ export default function EventHero({ event }: EventHeroProps) {
   return (
     <section className="relative w-full">
       {/* Content Container */}
-      <div className="w-full px-[20px] lg:px-[120px] pt-[40px] lg:pt-[60px]">
+      <div className="w-full px-[20px] lg:px-[120px] pt-[80px] lg:pt-[100px]">
         {/* Desktop: Two-column layout, Mobile: Stacked */}
         <div className="flex flex-col lg:flex-row lg:gap-[80px] lg:items-stretch">
           {/* Mobile: Event Details First, Desktop: Event Poster First */}
@@ -66,15 +66,12 @@ export default function EventHero({ event }: EventHeroProps) {
               />
             </div>
           </div>
-          <div className="relative inline-block overflow-hidden rounded-[20px] lg:rounded-[30px] mx-20 lg:mx-0">
+          <div className="relative overflow-hidden rounded-[20px] lg:rounded-[30px] mx-20 lg:mx-0 h-[350px] lg:h-[500px] w-auto lg:w-[380px] flex-shrink-0">
             <Image
               src={event.posterUrl || event.imageUrl}
               alt={`${event.name} poster`}
-              className="rounded-inherit"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "auto", height: "auto" }}
+              fill
+              className="object-cover object-top"
               priority
             />
           </div>

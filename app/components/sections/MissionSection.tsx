@@ -6,9 +6,9 @@
  */
 export default function MissionSection() {
   return (
-    <section id="mission" className="bg-[var(--color-dark-blue)] py-16 lg:py-24">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center gap-4 lg:gap-8 max-w-[353px] lg:max-w-[1280px] mx-auto">
+    <section id="mission" className="py-8 lg:py-12 px-4 lg:px-8">
+      <div className="bg-[var(--color-dark-blue)] rounded-[30px] lg:rounded-[50px] py-16 lg:py-24 px-[8%] lg:px-[18%] w-full mx-auto shadow-lg">
+        <div className="flex flex-col items-center text-center gap-4 lg:gap-8">
           <h2 className="text-h1 text-white font-bold">
             Our Mission
           </h2>

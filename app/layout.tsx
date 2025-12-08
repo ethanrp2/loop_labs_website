@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "LOOPLABS - AI Education for Innovators",
-  description: "Equipping young innovators with AI coursework, revolutionary ideas, and a backbone of integrity through comprehensive artificial intelligence education at LoopLabs.",
+  description: "Empowering the next generation with AI skills, creative thinking, and ethical foundations.",
 };
 
 export default function RootLayout({

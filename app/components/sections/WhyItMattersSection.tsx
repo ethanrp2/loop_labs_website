@@ -8,7 +8,7 @@ import { whyMatters } from '@/app/constants/images';
  */
 export default function WhyItMattersSection() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24 rounded-b-[20px] lg:rounded-b-[30px] relative z-10 shadow-lg">
       <div className="container mx-auto px-6">
         {/* Mobile: Stacked Layout */}
         <div className="lg:hidden flex flex-col items-center gap-6 max-w-[366px] mx-auto">
@@ -48,27 +48,27 @@ export default function WhyItMattersSection() {
           </h2>
           <div className="w-full h-[4px] bg-gray-200 mb-8" />
 
-          <div className="grid grid-cols-[682px_1fr] gap-16 items-start">
+          <div className="grid grid-cols-[450px_1fr] gap-12 items-start">
             {/* Image */}
-            <div className="relative w-[682px] h-[427px] rounded-[40px] overflow-hidden shadow-lg">
+            <div className="relative w-[450px] h-[300px] rounded-[30px] overflow-hidden shadow-lg">
               <Image
                 src={whyMatters.classroom}
                 alt="LOOPLABS Classroom"
-                width={682}
-                height={427}
+                width={450}
+                height={300}
                 className="object-cover"
               />
             </div>
 
             {/* Content */}
             <div className="flex flex-col gap-6">
-              <div className="text-[50px] leading-normal">
+              <div className="text-impact-title leading-normal">
                 <p>
-                  <span className="font-bold text-[var(--color-dark-blue)]">AI Revolution Impact:</span>{' '}
-                  <span className="text-black">How ChatGPT Changed Everything</span>
+                  <span className="font-bold text-[var(--color-dark-blue)]">How ChatGPT Changed Everything</span>{' '}
+                  <span className="text-black"></span>
                 </p>
               </div>
-              <p className="text-body text-black">
+              <p className="text-[25px] font-normal text-black">
                 AI is redefining every career as we navigate the future of work. The ChatGPT influence has sparked a tidal wave of change, highlighting the importance of bridging the AI skills gap. By staying ahead of the curve, we are committed to our mission in action.
               </p>
             </div>

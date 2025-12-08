@@ -12,11 +12,11 @@ import { logo } from '@/app/constants/images';
  */
 export default function Logo({ size = 'large', className = '' }: LogoProps) {
   const logoSize = {
-    width: size === 'small' ? 70 : size === 'medium' ? 85 : 99,
-    height: size === 'small' ? 40 : size === 'medium' ? 44 : 48,
+    width: size === 'small' ? 80 : size === 'medium' ? 98 : 114,
+    height: size === 'small' ? 46 : size === 'medium' ? 51 : 55,
   };
 
-  const textSize = size === 'small' ? 'text-[16px]' : size === 'medium' ? 'text-[22px]' : 'text-[25px]';
+  const textSize = size === 'small' ? 'text-[18px]' : size === 'medium' ? 'text-[25px]' : 'text-[29px]';
 
   return (
     <div className={`flex flex-col items-center gap-3 ${className}`}>
