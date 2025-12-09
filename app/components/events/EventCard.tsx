@@ -61,7 +61,7 @@ export default function EventCard({ event, className = '' }: EventCardProps) {
           <div className="flex flex-col justify-between h-[172px] lg:h-[362px] flex-1">
             {/* Top Section - Name and Date */}
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-[4px] lg:gap-0">
-              <h3 className="font-bold text-[20px] lg:text-[50px] leading-[100%] text-black lg:text-center">
+              <h3 className="font-bold text-[20px] lg:text-[50px] leading-[100%] text-black text-left">
                 {event.name}
               </h3>
               <p className="font-normal text-[18px] lg:text-[30px] leading-[100%] text-black lg:text-center whitespace-nowrap">
