@@ -10,7 +10,7 @@ export const MOCK_EVENTS: Event[] = [
     name: 'AI Prompt Engineering',
     date: 'Feb 16th, 10AM - 12PM',
     description:
-      'A full-day AI Prompt Engineering class for students to learn how AI works through creative, hands-on projects. Kids explore robotics, coding, and art while building real prompt-engineering skills. Bring a Chromebook and lunch; snacks provided. Registration due Feb 9.',
+      'An AI Prompt Engineering class for students to learn how AI works through creative, hands-on projects. Kids explore robotics, coding, and art while building real prompt-engineering skills. Registration due Feb 9th.',
     location: 'Sharon Elementary School',
     locationUrl: 'https://maps.app.goo.gl/u6in1qynXQdvjnsu8',
     imageUrl: '/images/events/prompt_engineering_flyer.png',
