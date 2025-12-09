@@ -64,7 +64,7 @@ export default function EventCard({ event, className = '' }: EventCardProps) {
               <h3 className="font-bold text-[20px] lg:text-[50px] leading-[100%] text-black text-left">
                 {event.name}
               </h3>
-              <p className="font-normal text-[18px] lg:text-[30px] leading-[100%] text-black lg:text-center whitespace-nowrap">
+              <p className="font-normal text-[18px] lg:text-[30px] leading-[120%] lg:leading-[100%] text-black lg:text-center lg:whitespace-nowrap">
                 {event.date}
               </p>
             </div>
