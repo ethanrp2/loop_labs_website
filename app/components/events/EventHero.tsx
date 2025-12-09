@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { EventHeroProps } from '@/app/types/events';
 import LocationLink from './LocationLink';
@@ -17,6 +20,20 @@ import LocationLink from './LocationLink';
  * - Divider line hidden on mobile
  */
 export default function EventHero({ event }: EventHeroProps) {
+  const [isImageExpanded, setIsImageExpanded] = useState(false);
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isImageExpanded) {
+        setIsImageExpanded(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isImageExpanded]);
+
   // Only display event ID 1
   if (event.id !== '1') {
     return null;
@@ -46,9 +63,9 @@ export default function EventHero({ event }: EventHeroProps) {
               <div className="hidden lg:block w-full h-0 border-t-2 border-[var(--color-dark-blue)]" />
 
               {/* Event Name and Date */}
-              <div className="flex items-center justify-between font-normal text-[18px] lg:text-[30px] leading-[100%] text-black whitespace-nowrap mt-[12px] lg:mt-0">
-                <p>LoopLabs Launch</p>
-                <p>Aug 18 - 22</p>
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between font-normal text-[18px] lg:text-[30px] leading-[100%] text-black mt-[12px] lg:mt-0 gap-[4px] lg:gap-0">
+                <p className="lg:whitespace-nowrap">{event.name}</p>
+                <p className="lg:whitespace-nowrap">{event.date}</p>
               </div>
             </div>
 
@@ -60,13 +77,19 @@ export default function EventHero({ event }: EventHeroProps) {
             {/* Location Link - pushes to bottom on desktop */}
             <div className="mt-[6px] lg:mt-[18px]">
               <LocationLink
-                location="1506 Stelton Road, Piscataway, NJ"
+                location={event.location}
                 url={event.locationUrl}
                 iconSize="large"
               />
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-[20px] lg:rounded-[30px] mx-20 lg:mx-0 h-[350px] lg:h-[500px] w-auto lg:w-[380px] flex-shrink-0">
+
+          {/* Clickable Poster Image */}
+          <button
+            onClick={() => setIsImageExpanded(true)}
+            className="relative overflow-hidden rounded-[20px] lg:rounded-[30px] mx-20 lg:mx-0 h-[350px] lg:h-[500px] w-auto lg:w-[380px] flex-shrink-0 cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+            aria-label="Expand event flyer"
+          >
             <Image
               src={event.posterUrl || event.imageUrl}
               alt={`${event.name} poster`}
@@ -74,13 +97,55 @@ export default function EventHero({ event }: EventHeroProps) {
               className="object-cover object-top"
               priority
             />
-          </div>
-
+          </button>
         </div>
       </div>
 
       {/* Add bottom spacing */}
       <div className="h-[80px] lg:h-[120px]" />
+
+      {/* Expanded Image Modal */}
+      {isImageExpanded && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setIsImageExpanded(false)}
+        >
+          <div
+            className="relative max-w-[90vw] max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsImageExpanded(false)}
+              className="absolute -top-3 -right-3 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
+              aria-label="Close expanded image"
+            >
+              <svg
+                className="w-6 h-6 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Expanded Image */}
+            <Image
+              src={event.posterUrl || event.imageUrl}
+              alt={`${event.name} poster expanded`}
+              width={600}
+              height={800}
+              className="rounded-[20px] object-contain max-h-[90vh] w-auto"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -7,16 +7,29 @@ import { Event } from '@/app/types/events';
 export const MOCK_EVENTS: Event[] = [
   {
     id: '1',
+    name: 'AI Prompt Engineering',
+    date: 'Feb 16th, 10AM - 12PM',
+    description:
+      'A full-day AI Prompt Engineering class for students to learn how AI works through creative, hands-on projects. Kids explore robotics, coding, and art while building real prompt-engineering skills. Bring a Chromebook and lunch; snacks provided. Registration due Feb 9.',
+    location: 'Sharon Elementary School',
+    locationUrl: 'https://maps.app.goo.gl/u6in1qynXQdvjnsu8',
+    imageUrl: '/images/events/prompt_engineering_flyer.png',
+    posterUrl: '/images/events/prompt_engineering_flyer.png',
+    category: 'upcoming',
+    featured: true,
+  },
+  {
+    id: '2',
     name: 'LoopLabs Launch',
     date: 'Aug 18 - 22',
     description:
-      'Description: LoopLabs Launch is a short, hands-on bootcamp for college students to learn practical AI skills like prompt engineering, agentic systems, product design, and startup thinking, taught by experienced industry experts with a focus on real-world impact.',
+      'LoopLabs Launch is a short, hands-on bootcamp for college students to learn practical AI skills like prompt engineering, agentic systems, product design, and startup thinking, taught by experienced industry experts with a focus on real-world impact.',
     location: '1506 Stelton Road, Piscataway, NJ',
     locationUrl: 'https://maps.google.com/?q=1506+Stelton+Road,+Piscataway,+NJ',
     imageUrl: '/images/events/cover_event.png',
     posterUrl: '/images/events/cover_event.png',
-    category: 'upcoming',
-    featured: true,
+    category: 'past',
+    featured: false,
   },
   // {
   //   id: '2',
